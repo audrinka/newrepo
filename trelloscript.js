@@ -28,7 +28,8 @@ function Column(name) {
     $columnDelete.click(function() {
         self.deleteColumn();
     });
-    Dodawanie karteczki po kliknięciu w przycisk:
+    
+    // Dodawanie karteczki po kliknięciu w przycisk:
     $columnAddCard.click(function() {
         self.addCard(new Card(prompt("Wpisz nazwę karty")));
     });
@@ -121,4 +122,3 @@ todoColumn.addCard(card1);
 doingColumn.addCard(card2);
 
 });
-
