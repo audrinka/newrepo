@@ -29,8 +29,7 @@ function Column(name) {
         self.deleteColumn();
     });
     
-    // Dodawanie karteczki po kliknięciu w przycisk:
-    $columnAddCard.click(function() {
+    $columnAddCard.on('click', function() {
         self.addCard(new Card(prompt("Wpisz nazwę karty")));
     });
 
@@ -52,7 +51,7 @@ Column.prototype = {
     }
 };
 
-function Card() {
+function Card(description) {
   var self = this;
 
   this.id = randomString();
@@ -77,7 +76,7 @@ function Card() {
 Card.prototype = {
   removeCard: function() {
     this.$element.remove();
-}
+  }
 }
 
 var board = {
