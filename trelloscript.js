@@ -11,12 +11,12 @@ $(function(){
     return str;
 }
 
-function Column(name) {
+function Column(id, name) {
     var self = this;
 
     this.id = randomString();
     this.name = name;
-    this.$element = createColumn();
+    this.element = createColumn();
 
     function createColumn() {
       var $column = $('<div>').addClass('column');
@@ -46,7 +46,7 @@ Column.prototype = {
     addCard: function(card) {
       this.$element.children('ul').append(card.$element);
     },
-    removeColumn: function() {
+    deleteColumn: function() {
       this.$element.remove();
     }
 };
@@ -81,7 +81,7 @@ Card.prototype = {
 
 var board = {
     name: 'Tablica Kanban',
-    addColumn: function(column) {
+    createColumn: function(column) {
       this.$element.append(column.$element);
       initSortable();
     },
@@ -97,8 +97,8 @@ function initSortable() {
 
  $('.create-column')
   .click(function(){
-  var name = prompt('Wpisz nazwę kolumny');
-  var column = new Column(name);
+    var name = prompt('Wpisz nazwę kolumny');
+    var column = new Column(name);
       board.addColumn(column);
   });
 
