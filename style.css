@@ -1,0 +1,95 @@
+@import 'https://fonts.googleapis.com/css?family=Baloo+Paaji&sublet="latin-ext"';
+
+body {
+  background-color: #949494; 
+}
+
+.siteWidth {
+  float: none;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+.slogan {
+  margin: 20vh auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family: "Baloo Paaji"; 
+}
+
+.slogan h1 {
+  font-size: 50px;
+  letter-spacing: 0.1em; 
+}
+
+.new {
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  border-radius: 15px;
+  text-align: center; 
+}
+
+.new p {
+  text-align: left;
+  font-family: "Baloo Paaji";
+  padding: 10px;
+  font-size: 20px; 
+}
+
+.new .rock:hover {
+  background-color: #C6C386; 
+}
+
+.new .paper:hover {
+  background-color: #E1DFE2; 
+}
+
+.new .scissors:hover {
+    background-color: #4f372d; 
+}
+
+.new .btn {
+  border-radius: 50%;
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  margin: 10px; 
+}
+
+.new .btn:first-of-type {
+  margin-left: 30%; 
+}
+
+.new .btn-default {
+  color: white; 
+}
+
+.new i {
+  font-size: 50px;
+  display: block; 
+}
+
+.new .btn-info {
+  background-color: black;
+  border-radius: 15px; 
+}
+
+.new #roundResult {
+  text-align: center; 
+}
+
+.new .panel {
+  width: 50%; 
+}
+
+.new .panel-body {
+  height: 300px; 
+}
+
+.pick-button {
+  visibility: hidden; 
+}
