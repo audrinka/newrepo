@@ -11,12 +11,12 @@ $(function(){
     return str;
 }
 
-function Column(id, name) {
+function Column(name) {
     var self = this;
 
     this.id = randomString();
     this.name = name;
-    this.element = createColumn();
+    this.$element = createColumn();
 
     function createColumn() {
       var $column = $('<div>').addClass('column');
@@ -25,21 +25,21 @@ function Column(id, name) {
       var $columnDelete = $('<button>').addClass('btn-delete').text('x');
       var $columnAddCard = $('<button>').addClass('add-card').text('Dodaj kartę');
 
-    $columnDelete.click(function() {
-        self.deleteColumn();
-    });
-    
-    $columnAddCard.on('click', function() {
-        self.addCard(new Card(prompt("Wpisz nazwę karty")));
-    });
+	    $columnDelete.click(function() {
+	        self.deleteColumn();
+	    });
 
-    $column.append($columnTitle)
-        .append($columnDelete)
-        .append($columnAddCard)
-        .append($columnCardList);
-  
-    return $column;
-  }
+	    $columnAddCard.on('click', function() {
+	        self.addCard(new Card(prompt("Wpisz nazwę karty")));
+	    });
+
+	    $column.append($columnTitle)
+	        .append($columnDelete)
+	        .append($columnAddCard)
+	        .append($columnCardList);
+
+	    return $column;
+	  }
 }
 
 Column.prototype = {
@@ -62,7 +62,7 @@ function Card(description) {
     var $card = $('<li>').addClass('card');
     var $cardDescription = $('<p>').addClass('card-description').text(self.description);
     var $cardDelete = $('<button>').addClass('btn-delete').text('x');
-    
+
     $cardDelete.click(function(){
         self.removeCard();
     });
@@ -81,11 +81,11 @@ Card.prototype = {
 
 var board = {
     name: 'Tablica Kanban',
-    createColumn: function(column) {
+    addColumn: function(column) {
       this.$element.append(column.$element);
       initSortable();
     },
-    element: $('#board .column-container')
+    $element: $('#board .column-container')
 };
 
 function initSortable() {
