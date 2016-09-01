@@ -1,0 +1,28 @@
+#carousel {
+  margin: 0 auto;
+  text-align: center;
+  height: 300px;
+  width: 400px;
+  overflow: hidden;
+  border: outset 4px;
+  margin-top: 20px;
+}
+ 
+#carousel ul {
+    display: block;
+    width: 2000px;
+    height: 300px;
+    padding-left: 0; 
+}
+ 
+#carousel li {
+    float: left;
+    display: block;
+    list-style: none; 
+}
+
+#carousel li img {
+      display: block;
+      height: 300px;
+      width: 400px; 
+}
